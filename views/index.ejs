@@ -1,0 +1,33 @@
+<html lang="en">
+  <!-- <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Site | <%= title %></title>
+  </head> -->
+  <%- include("./partials/header.ejs") %>
+  <body>
+    <!-- <nav>
+      <div class="site__title">
+        <a href="/"><h1>My Blogs</h1></a>
+        <p>this is a site made just for practice of node js and express js</p>
+      </div>
+      <ul>
+        <li><a href="/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/blogs/create"> New Blog</a></li>
+      </ul>
+    </nav> -->
+    <%- include("./partials/nav.ejs") %>
+    <div class="blogs content">
+      <h2>ALL Blogs</h2>
+      <% if(blogs.length >0){ %> <% blogs.forEach((blogs)=>{ %>
+      <h2 class="title"><%=blogs.title %></h2>
+      <p class="snippet"><%= blogs.snippet %></p>
+      <% }) %> <% } else{ %>
+      <p>No blogs .............</p>
+      <% } %>
+    </div>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>
